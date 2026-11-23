@@ -26,7 +26,7 @@ Over 100 runs with identical parameters, tournament selection found the global m
 of the time, roulette 48%, roulette with fitness sharing 59% and deterministic crowding 80%.
 The failed runs all end on the first ring.
 
-![Final solution of each run](01-genetic-algorithm/saida/parte2_dispersao.png)
+<p align="center"><img src="01-genetic-algorithm/saida/parte2_dispersao.png" alt="Final solution of each run" width="420"></p>
 
 ### 02 · Ant colony optimisation
 
@@ -34,7 +34,7 @@ ACO on a 20-city distance matrix, with a video of the pheromone trails forming. 
 over colony size and evaporation rate show that the standard deviation between runs falls
 much faster than the mean tour length.
 
-![Best tour](02-ant-colony/saida/parte1_melhor_rota.png)
+<p align="center"><img src="02-ant-colony/saida/parte2_a_distancia.png" alt="Tour length versus number of ants" width="560"></p>
 
 ### 03 · Particle swarm optimisation
 
@@ -43,7 +43,7 @@ c1 = c2 = 4: the swarm reaches the right valley in 88 runs but never settles, so
 count as converged. Adding a constriction factor fixes it, and too much constriction breaks
 it again.
 
-![Convergence curves per parameter pair](03-particle-swarm/saida/parte2_curvas.png)
+<p align="center"><img src="03-particle-swarm/saida/parte2_curvas.png" alt="Convergence curves per parameter pair" width="720"></p>
 
 ### 04 · Fuzzy logic
 
@@ -53,7 +53,7 @@ intersection simulator, 100 seeds per scenario, comparing the controller with fi
 The honest result: it is better than the default fixed light everywhere, but in light
 traffic a well-chosen fixed timing still beats it.
 
-![Control surface](04-fuzzy-logic/saida/superficie_3d.png)
+<p align="center"><img src="04-fuzzy-logic/saida/superficie_3d.png" alt="Control surface" width="520"></p>
 
 ### 05 · Naive Bayes
 
@@ -61,7 +61,7 @@ Gaussian Naive Bayes by hand, matching scikit-learn's `GaussianNB`. Three featur
 well as all ten (73.1%), and accuracy peaks at five (75.0% over 300 splits). The extra
 looks at calibration: correlated features make the model overconfident.
 
-![Declared confidence versus real accuracy](05-naive-bayes/saida/extra_calibracao.png)
+<p align="center"><img src="05-naive-bayes/saida/extra_calibracao.png" alt="Declared confidence versus real accuracy" width="560"></p>
 
 ### 06 · Regression trees and random forests
 
@@ -75,7 +75,7 @@ regression wins in 10 of 10 splits. On the bent target, the forest wins in 9 of 
 The forest did not lose because it is a worse model; it lost because this dataset is close
 to a straight line.
 
-![Linear regression versus forest as the target bends](06-trees-and-forests/saida/alvo_torto.png)
+<p align="center"><img src="06-trees-and-forests/saida/alvo_torto.png" alt="Linear regression versus forest as the target bends" width="640"></p>
 
 The folder also has an in-browser demo of the trained forest
 (`06-trees-and-forests/demo/floresta_ao_vivo.html`) and a closing experiment that tunes the
