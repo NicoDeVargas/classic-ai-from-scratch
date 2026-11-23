@@ -79,7 +79,7 @@ to a straight line.
 
 The folder also has an in-browser demo of the trained forest
 (`06-trees-and-forests/demo/floresta_ao_vivo.html`) and a closing experiment that tunes the
-tree with the genetic algorithm and the particle swarm from projects 01 and 03.
+forest with the genetic algorithm and the particle swarm from projects 01 and 03.
 
 ## Running
 
