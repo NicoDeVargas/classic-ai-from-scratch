@@ -1,0 +1,2 @@
+pontos comparados: 961
+maior diferença entre o nosso motor e o scikit-fuzzy: 0.015 s

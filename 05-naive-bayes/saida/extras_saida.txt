@@ -1,0 +1,37 @@
+Extra 1: quantas features usar? (300 divisões)
+   1 features (s5): 0.7200
+   2 features (s5, bmi): 0.7278
+   3 features (s5, bmi, bp): 0.7348
+   4 features (s5, bmi, bp, s6): 0.7339
+   5 features (s5, bmi, bp, s6, s4): 0.7499
+   6 features (s5, bmi, bp, s6, s4, s3): 0.7411
+   7 features (s5, bmi, bp, s6, s4, s3, s2): 0.7358
+   8 features (s5, bmi, bp, s6, s4, s3, s2, s1): 0.7312
+   9 features (s5, bmi, bp, s6, s4, s3, s2, s1, age): 0.7269
+  10 features (s5, bmi, bp, s6, s4, s3, s2, s1, age, sex): 0.7264
+
+Extra 2: correlações mais fortes
+  s1 e s2: 0.90
+  s3 e s4: -0.74
+  s2 e s4: 0.66
+
+Extra 3: a certeza do modelo confere? (certeza declarada x acerto real)
+  10 features certeza 50-60%: declara 55.2%, acerta 45.1% (1400 previsões)
+  10 features certeza 60-70%: declara 65.0%, acerta 52.8% (1752 previsões)
+  10 features certeza 70-80%: declara 75.2%, acerta 57.9% (2163 previsões)
+  10 features certeza 80-90%: declara 85.8%, acerta 65.8% (2817 previsões)
+  10 features certeza 90-95%: declara 92.7%, acerta 65.0% (2943 previsões)
+  10 features certeza 95-100%: declara 98.9%, acerta 82.2% (15325 previsões)
+  3 features  certeza 50-60%: declara 54.9%, acerta 48.4% (2690 previsões)
+  3 features  certeza 60-70%: declara 65.0%, acerta 54.0% (3026 previsões)
+  3 features  certeza 70-80%: declara 75.2%, acerta 56.7% (3207 previsões)
+  3 features  certeza 80-90%: declara 85.3%, acerta 73.0% (5079 previsões)
+  3 features  certeza 90-95%: declara 92.6%, acerta 78.5% (4135 previsões)
+  3 features  certeza 95-100%: declara 97.8%, acerta 93.1% (8263 previsões)
+
+Extra 4: e sem a hipótese ingênua?
+  Naive Bayes, 10 features                           0.7264
+  Naive Bayes depois de tirar a correlação (PCA)     0.7301
+  Bayes com covariância, uma por classe              0.7251
+  Bayes com covariância, a mesma nas duas classes    0.7353
+  Naive Bayes, as 5 melhores features                0.7499

@@ -1,0 +1,42 @@
+Parte 2 - efeito de c1 e c2 (100 execucoes por par, sementes 0 a 99)
+convergencia = melhor valor final f(gbest) < 0.01
+
+c1, c2          convergiu   regiao do minimo        outros 10 lotes
+[0, 1]             49/100             49/100              48 a 63
+[1, 0]              6/100             18/100               2 a 11
+[1, 1]             85/100             86/100              84 a 93
+[1, 0.1]           12/100             46/100               6 a 19
+[2, 2]             96/100             97/100              92 a 98
+[4, 4]              2/100             88/100               0 a 4
+
+sensibilidade a tolerancia (quantas execucoes ficaram abaixo de cada valor):
+c1, c2            f<0.9     f<0.01   f<0.0001    f<1e-06
+[0, 1]               49         49         49         49
+[1, 0]               18          6          1          0
+[1, 1]               86         85         84         83
+[1, 0.1]             46         12          5          1
+[2, 2]               97         96         95         76
+[4, 4]               88          2          0          0
+
+sensibilidade ao Vmax (fracao do intervalo [-5.12, 5.12]; usado: 0.2):
+c1, c2            0.1      0.2      0.3        1      sem
+[0, 1]             50       49       63       56       56
+[1, 0]              5        6        6        6        6
+[1, 1]             76       85       90       87       86
+[1, 0.1]           17       12       10       20       20
+[2, 2]             86       96       96       88       87
+[4, 4]              2        2        2        0        0
+
+extra: c1 = c2 = 4 com fator de constricao
+  chi = 1     convergiu   2/100   regiao  88/100   raio final mediano 3.83
+  chi = 0.9   convergiu   5/100   regiao  88/100   raio final mediano 3.63
+  chi = 0.8   convergiu   5/100   regiao  97/100   raio final mediano 3.53
+  chi = 0.729 convergiu  31/100   regiao  99/100   raio final mediano 3.23
+  chi = 0.6   convergiu  97/100   regiao  99/100   raio final mediano 1.86
+  chi = 0.5   convergiu  86/100   regiao  87/100   raio final mediano 0.00551
+  chi = 0.4   convergiu  56/100   regiao  56/100   raio final mediano 5.7e-09
+  chi = 0.3   convergiu  39/100   regiao  39/100   raio final mediano 3.41e-09
+
+arquivos gerados em saida
+  parte2_convergencias.png, parte2_curvas.png, parte2_constricao.png
+  parte2_comparativo.mp4 e um video por par: parte2_c1-0_c2-1.mp4, parte2_c1-1_c2-0.mp4, parte2_c1-1_c2-1.mp4, parte2_c1-1_c2-0.1.mp4, parte2_c1-2_c2-2.mp4, parte2_c1-4_c2-4.mp4

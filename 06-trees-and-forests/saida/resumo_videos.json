@@ -1,0 +1,22 @@
+{
+  "features": [
+    "bmi",
+    "s5"
+  ],
+  "arvore": {
+    "arquivo": "arvore_crescendo.mp4",
+    "melhor": 3,
+    "teste_melhor": 49.23236616715874,
+    "teste_final": 58.277985209235204,
+    "treino_final": 13.648829701372074,
+    "folhas_final": 215,
+    "duracao_s": 20
+  },
+  "floresta": {
+    "arquivo": "floresta_media.mp4",
+    "erro_uma": 62.9215110930736,
+    "erro_100": 51.250349837662334,
+    "erro_10": 54.24687635281385,
+    "duracao_s": 24
+  }
+}

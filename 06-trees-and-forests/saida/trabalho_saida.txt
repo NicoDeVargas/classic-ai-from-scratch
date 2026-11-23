@@ -1,0 +1,60 @@
+Parte 1: árvore de regressão (sem limite de profundidade)
+  divisão  1: MAE treino   0.00   MAE teste  67.88
+  divisão  2: MAE treino   0.00   MAE teste  59.22
+  divisão  3: MAE treino   0.00   MAE teste  69.44
+  divisão  4: MAE treino   0.00   MAE teste  59.33
+  divisão  5: MAE treino   0.00   MAE teste  62.75
+  divisão  6: MAE treino   0.00   MAE teste  66.73
+  divisão  7: MAE treino   0.00   MAE teste  66.77
+  divisão  8: MAE treino   0.00   MAE teste  68.33
+  divisão  9: MAE treino   0.00   MAE teste  63.53
+  divisão 10: MAE treino   0.00   MAE teste  56.77
+  MAE de teste: média 64.08   desvio padrão 4.21
+  MAE de treino: média 0.00   desvio padrão 0.00
+  5 exemplos do último modelo (real -> previsto)
+    paciente 125: real 161.0   previsto 152.0
+    paciente  50: real 155.0   previsto  44.0
+    paciente 440: real 220.0   previsto 166.0
+    paciente 136: real  85.0   previsto  59.0
+    paciente  30: real 129.0   previsto 187.0
+
+Parte 2: floresta aleatória (100 árvores, 3 features sorteadas por nó)
+  divisão  1: MAE treino  16.94   MAE teste  47.79
+  divisão  2: MAE treino  17.08   MAE teste  49.14
+  divisão  3: MAE treino  17.14   MAE teste  51.59
+  divisão  4: MAE treino  17.89   MAE teste  45.38
+  divisão  5: MAE treino  17.98   MAE teste  41.70
+  divisão  6: MAE treino  17.97   MAE teste  44.93
+  divisão  7: MAE treino  16.84   MAE teste  50.43
+  divisão  8: MAE treino  17.59   MAE teste  44.25
+  divisão  9: MAE treino  17.22   MAE teste  46.78
+  divisão 10: MAE treino  17.40   MAE teste  46.71
+  MAE de teste: média 46.87   desvio padrão 2.84
+  MAE de treino: média 17.40   desvio padrão 0.41
+  5 exemplos do último modelo (real -> previsto)
+    paciente 125: real 161.0   previsto 193.0
+    paciente  50: real 155.0   previsto 102.7
+    paciente 440: real 220.0   previsto 177.2
+    paciente 136: real  85.0   previsto  79.8
+    paciente  30: real 129.0   previsto 126.7
+
+Parte 3: efeito da profundidade (média ± desvio do MAE em 10 divisões)
+  prof.   árvore treino    árvore teste     floresta treino  floresta teste
+    1     53.15 ± 0.50     57.14 ± 2.78     52.48 ± 0.70     55.91 ± 3.00
+    2     46.21 ± 0.67     50.54 ± 2.94     47.13 ± 0.74     50.95 ± 2.83
+    3     42.86 ± 0.93     49.83 ± 3.27     43.08 ± 0.89     48.65 ± 2.74
+    4     39.23 ± 1.24     51.12 ± 2.07     39.07 ± 0.69     47.76 ± 2.87
+    5     34.16 ± 1.31     53.30 ± 1.93     34.99 ± 0.77     47.26 ± 2.84
+    6     28.57 ± 1.33     55.65 ± 2.55     30.83 ± 0.66     46.82 ± 2.82
+    7     22.48 ± 1.65     57.02 ± 3.64     26.83 ± 0.64     47.20 ± 2.85
+    8     16.83 ± 1.64     59.68 ± 3.64     23.78 ± 0.65     47.28 ± 2.82
+    9     11.83 ± 1.82     61.87 ± 3.43     21.29 ± 0.48     47.19 ± 2.93
+   10      7.49 ± 1.81     62.73 ± 3.38     19.64 ± 0.47     47.33 ± 2.87
+  melhor profundidade: árvore 3, floresta 6
+
+Parte 4: número de árvores (floresta com profundidade 6)
+    5 árvores: teste 49.99 ± 3.65   treino 32.66 ± 1.39
+   10 árvores: teste 47.84 ± 3.45   treino 31.73 ± 1.07
+   20 árvores: teste 47.20 ± 3.06   treino 31.23 ± 0.82
+   40 árvores: teste 46.92 ± 2.92   treino 31.10 ± 0.79
+   80 árvores: teste 46.74 ± 2.82   treino 30.94 ± 0.70

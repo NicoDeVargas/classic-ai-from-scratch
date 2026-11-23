@@ -1,0 +1,23 @@
+Fechamento, parte 2: a busca onde há folga (a busca só enxerga o treino, com validação em 5 partes)
+  divisão  1: PSO escolheu profundidade  8, mínimo 60 | árvore 67.88 -> 51.57 | AG escolheu age,sex,bmi,bp,s1,s2,s3,s5,s6      Bayes 72.7% -> 71.6%
+  divisão  2: PSO escolheu profundidade  2, mínimo 32 | árvore 59.22 -> 54.42 | AG escolheu sex,bmi,s1,s3,s5,s6                Bayes 70.5% -> 72.7%
+  divisão  3: PSO escolheu profundidade  4, mínimo 29 | árvore 69.44 -> 53.64 | AG escolheu bmi,bp,s4,s5                       Bayes 73.9% -> 77.3%
+  divisão  4: PSO escolheu profundidade  2, mínimo 45 | árvore 59.33 -> 48.39 | AG escolheu sex,bmi,bp,s1,s2,s3,s5,s6          Bayes 77.3% -> 79.5%
+  divisão  5: PSO escolheu profundidade  2, mínimo 15 | árvore 62.75 -> 46.49 | AG escolheu age,sex,bmi,s1,s4,s5,s6            Bayes 77.3% -> 73.9%
+  divisão  6: PSO escolheu profundidade  3, mínimo 34 | árvore 66.73 -> 49.93 | AG escolheu bmi,bp,s3,s4,s5                    Bayes 75.0% -> 73.9%
+  divisão  7: PSO escolheu profundidade  8, mínimo 35 | árvore 66.77 -> 53.49 | AG escolheu age,sex,bmi,bp,s1,s3,s5,s6         Bayes 65.9% -> 64.8%
+  divisão  8: PSO escolheu profundidade  6, mínimo 40 | árvore 68.33 -> 49.76 | AG escolheu sex,bmi,bp,s2,s4,s5                Bayes 76.1% -> 73.9%
+  divisão  9: PSO escolheu profundidade  5, mínimo 46 | árvore 63.53 -> 49.23 | AG escolheu sex,bmi,s1,s3,s5                   Bayes 67.0% -> 68.2%
+  divisão 10: PSO escolheu profundidade  4, mínimo 51 | árvore 56.77 -> 50.18 | AG escolheu bmi,bp,s1,s4,s5                    Bayes 75.0% -> 77.3%
+
+Nas 10 divisões do trabalho
+  PSO na árvore: sem limite 64.08 -> ajustada 50.71 (profundidade 3 fixa: 49.83); melhor em 10 de 10 divisões
+    profundidade escolhida: mediana 4 (de 2 a 8); mínimo para dividir: mediana 37
+  AG no Naive Bayes: 10 medidas 73.1% -> escolhidas 73.3%; melhor em 5, igual em 0, de 10 divisões; média de 6.3 medidas
+    vezes que cada medida foi escolhida: {'age': 3, 'sex': 7, 'bmi': 10, 'bp': 7, 's1': 7, 's2': 3, 's3': 6, 's4': 5, 's5': 10, 's6': 5}
+
+Em outras 100 divisões
+  PSO na árvore: sem limite 63.25 -> ajustada 50.45 (profundidade 3 fixa: 50.28); melhor em 100 de 100 divisões
+    profundidade escolhida: mediana 4 (de 2 a 12); mínimo para dividir: mediana 42
+  AG no Naive Bayes: 10 medidas 73.0% -> escolhidas 73.7%; melhor em 53, igual em 16, de 100 divisões; média de 5.7 medidas
+    vezes que cada medida foi escolhida: {'age': 48, 'sex': 46, 'bmi': 91, 'bp': 91, 's1': 36, 's2': 30, 's3': 53, 's4': 43, 's5': 100, 's6': 36}

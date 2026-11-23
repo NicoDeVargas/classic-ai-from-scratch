@@ -1,0 +1,5 @@
+árvore de profundidade 3: previsões idênticas às do scikit-learn em 9 de 10 divisões
+  MAE médio de teste: nossa 49.83   scikit-learn 50.01
+árvore sem limite: nossa 64.08   scikit-learn 63.73
+floresta (100 árvores, 3 features): nossa 46.87   scikit-learn 47.62
+(a árvore funda e a floresta dependem de sorteios e de desempates, então só as médias são comparáveis)

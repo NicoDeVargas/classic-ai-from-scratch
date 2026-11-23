@@ -1,0 +1,181 @@
+{
+  "duracao_s": 7200,
+  "sementes": 100,
+  "sementes_fixo": 100,
+  "vazao_veic_s": 0.5,
+  "verde_base": 30,
+  "verde_min": 15,
+  "verde_max": 60,
+  "verde_principal": 45,
+  "amarelo": 3,
+  "chegada_principal_veic_h": 900,
+  "cenarios": [
+    {
+      "pico_veic_h": 216,
+      "fixo30": {
+        "sec": 19.308726127926196,
+        "pri": 27.006300338487243,
+        "todos": 25.55710427896148,
+        "fila_max": 8.04
+      },
+      "fuzzy": {
+        "sec": 20.756816394164098,
+        "pri": 16.312445675376875,
+        "todos": 17.169094128582838,
+        "fila_max": 7.96
+      },
+      "fuzzy_melhor_que_fixo30_pct": {
+        "sec": 12,
+        "pri": 100,
+        "todos": 100
+      },
+      "melhor_fixo": {
+        "verde": 15,
+        "sec": 25.011969795091474,
+        "pri": 8.710614215818623,
+        "todos": 11.841931389479752,
+        "fuzzy_mesmas_sementes": 17.169094128582834
+      },
+      "defuzz": {
+        "centroide": 17.169094128582834,
+        "bissetor": 17.180731071300194,
+        "mom": 15.89180210133772
+      }
+    },
+    {
+      "pico_veic_h": 432,
+      "fixo30": {
+        "sec": 20.679722927867466,
+        "pri": 27.006300338487243,
+        "todos": 25.52517586796523,
+        "fila_max": 10.86
+      },
+      "fuzzy": {
+        "sec": 22.372883545125102,
+        "pri": 16.676610334518596,
+        "todos": 18.043855498173468,
+        "fila_max": 10.99
+      },
+      "fuzzy_melhor_que_fixo30_pct": {
+        "sec": 4,
+        "pri": 100,
+        "todos": 100
+      },
+      "melhor_fixo": {
+        "verde": 18,
+        "sec": 29.480782879533955,
+        "pri": 10.88298092855892,
+        "todos": 15.345924387513232,
+        "fuzzy_mesmas_sementes": 18.04385549817346
+      },
+      "defuzz": {
+        "centroide": 18.04385549817346,
+        "bissetor": 17.97830229481205,
+        "mom": 16.87079011006568
+      }
+    },
+    {
+      "pico_veic_h": 720,
+      "fixo30": {
+        "sec": 41.58326746948696,
+        "pri": 27.006300338487243,
+        "todos": 31.32545500186001,
+        "fila_max": 27.16
+      },
+      "fuzzy": {
+        "sec": 33.463567274716176,
+        "pri": 20.579279447381882,
+        "todos": 24.36200690534948,
+        "fila_max": 22.35
+      },
+      "fuzzy_melhor_que_fixo30_pct": {
+        "sec": 72,
+        "pri": 92,
+        "todos": 100
+      },
+      "melhor_fixo": {
+        "verde": 30,
+        "sec": 41.58326746948696,
+        "pri": 27.00630033848725,
+        "todos": 31.325455001860004,
+        "fuzzy_mesmas_sementes": 24.362006905349485
+      },
+      "defuzz": {
+        "centroide": 24.362006905349485,
+        "bissetor": 24.426187426749284,
+        "mom": 23.703311086588148
+      }
+    },
+    {
+      "pico_veic_h": 1008,
+      "fixo30": {
+        "sec": 266.71002557537054,
+        "pri": 27.006300338487243,
+        "todos": 108.45492899647154,
+        "fila_max": 128.96
+      },
+      "fuzzy": {
+        "sec": 87.4032814056653,
+        "pri": 71.89611759759586,
+        "todos": 77.25074244134068,
+        "fila_max": 59.82
+      },
+      "fuzzy_melhor_que_fixo30_pct": {
+        "sec": 100,
+        "pri": 0,
+        "todos": 97
+      },
+      "melhor_fixo": {
+        "verde": 36,
+        "sec": 155.4590213081822,
+        "pri": 73.86105983826783,
+        "todos": 101.96254771169579,
+        "fuzzy_mesmas_sementes": 77.25074244134066
+      },
+      "defuzz": {
+        "centroide": 77.25074244134066,
+        "bissetor": 76.7755282899856,
+        "mom": 76.29712204584052
+      }
+    }
+  ],
+  "video": {
+    "pico_veic_h": 720,
+    "semente": 0,
+    "janela_min": [
+      42.0,
+      80.0
+    ],
+    "fixo": {
+      "atraso_sec": 59.4869109947644,
+      "atraso_pri": 22.005643340857787,
+      "atraso_todos": 33.29731861198738
+    },
+    "fuzzy": {
+      "atraso_sec": 37.846354166666664,
+      "atraso_pri": 20.90373725934315,
+      "atraso_todos": 26.03867403314917
+    },
+    "verdes_fuzzy": [
+      24,
+      45
+    ],
+    "duracao_s": 38,
+    "acumulado_veic_h": {
+      "fixo": 14.406666666666666,
+      "fuzzy": 11.403055555555556
+    },
+    "parados_max": {
+      "fixo": 36,
+      "fuzzy": 35
+    },
+    "fila_pri_max": {
+      "fixo": 18,
+      "fuzzy": 24
+    },
+    "fila_max": {
+      "fixo": 33,
+      "fuzzy": 22
+    }
+  }
+}

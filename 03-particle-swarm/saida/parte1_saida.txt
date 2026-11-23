@@ -1,0 +1,10 @@
+Parte 1 - PSO na funcao de Rastrigin (n = 2)
+particulas=15  iteracoes=100  c1=2  c2=2  w: 0.9 -> 0.4  vmax=2.048  semente=2
+
+melhor posicao encontrada: (0.000006, -0.000018)
+valor da funcao nessa posicao: 6.770e-08
+CONVERGIU para o minimo global (f < 0.01) na iteracao 58
+raio do enxame: 10.615 no inicio, 0.483 no fim
+
+arquivos gerados em saida
+  rastrigin.png, parte1_convergencia.png, parte1_instantes.png, parte1_enxame.mp4

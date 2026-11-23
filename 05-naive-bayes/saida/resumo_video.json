@@ -1,0 +1,23 @@
+{
+  "duracao_s": 40,
+  "pacientes": [
+    {
+      "letra": "A",
+      "real": 1,
+      "prob1": 0.765989117245197,
+      "maior_puxao": "s5"
+    },
+    {
+      "letra": "B",
+      "real": 0,
+      "prob1": 0.00018341124837447701,
+      "maior_puxao": "s5"
+    },
+    {
+      "letra": "C",
+      "real": 0,
+      "prob1": 0.9882120428277638,
+      "maior_puxao": "s5"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+Fechamento: o AG e o PSO dos trabalhos anteriores ajustando a floresta
+(a busca só enxerga o treino de cada divisão, pelo erro fora da sacola; o teste fica guardado)
+  divisão  1: AG escolheu age,sex,bmi,bp,s1,s2,s4,s5,s6          PSO escolheu prof. 10,  4 medidas, mínimo 11 | teste: padrão 47.79  AG 48.40  PSO 47.67  AG+PSO 47.80
+  divisão  2: AG escolheu age,sex,bmi,s1,s3,s4,s5                PSO escolheu prof.  6,  4 medidas, mínimo 20 | teste: padrão 49.14  AG 51.54  PSO 49.29  AG+PSO 51.16
+  divisão  3: AG escolheu age,sex,bmi,bp,s1,s4,s5,s6             PSO escolheu prof.  7,  8 medidas, mínimo 31 | teste: padrão 51.59  AG 51.62  PSO 50.82  AG+PSO 51.42
+  divisão  4: AG escolheu sex,bmi,bp,s1,s4,s5,s6                 PSO escolheu prof.  6,  7 medidas, mínimo 22 | teste: padrão 45.38  AG 44.68  PSO 45.17  AG+PSO 45.46
+  divisão  5: AG escolheu age,sex,bmi,bp,s2,s5,s6                PSO escolheu prof.  7,  4 medidas, mínimo 34 | teste: padrão 41.70  AG 41.11  PSO 42.33  AG+PSO 41.16
+  divisão  6: AG escolheu age,bmi,s1,s4,s5,s6                    PSO escolheu prof.  9,  7 medidas, mínimo 25 | teste: padrão 44.93  AG 49.55  PSO 47.07  AG+PSO 48.69
+  divisão  7: AG escolheu age,sex,bmi,bp,s1,s2,s3,s4,s5          PSO escolheu prof. 10,  8 medidas, mínimo 24 | teste: padrão 50.43  AG 51.82  PSO 52.90  AG+PSO 52.77
+  divisão  8: AG escolheu age,sex,bmi,bp,s1,s2,s3,s4,s5          PSO escolheu prof.  6,  5 medidas, mínimo 14 | teste: padrão 44.25  AG 44.10  PSO 44.29  AG+PSO 43.49
+  divisão  9: AG escolheu age,bmi,s1,s2,s4,s5,s6                 PSO escolheu prof. 11,  7 medidas, mínimo 19 | teste: padrão 46.78  AG 50.51  PSO 47.37  AG+PSO 50.46
+  divisão 10: AG escolheu age,sex,bmi,bp,s2,s3,s4,s5             PSO escolheu prof.  9,  5 medidas, mínimo 13 | teste: padrão 46.71  AG 46.78  PSO 46.45  AG+PSO 47.46
+  floresta padrão        MAE de teste 46.87 ± 2.84   melhor que a padrão em 0 de 10
+  + AG (medidas)         MAE de teste 48.01 ± 3.52   melhor que a padrão em 3 de 10
+  + PSO (configuração)   MAE de teste 47.34 ± 2.95   melhor que a padrão em 4 de 10
+  AG + PSO               MAE de teste 47.99 ± 3.53   melhor que a padrão em 3 de 10
+  regressão linear nas mesmas divisões: 44.60
+  vezes que o AG escolheu cada medida: {'age': 9, 'sex': 8, 'bmi': 10, 'bp': 7, 's1': 8, 's2': 6, 's3': 4, 's4': 9, 's5': 10, 's6': 6}
+
+A pergunta do trabalho de Naive Bayes (acima ou abaixo da média), nas mesmas 10 divisões
+  Naive Bayes                acurácia 73.1% ± 3.8
+  árvore de profundidade 3   acurácia 70.9% ± 3.3
+  floresta aleatória         acurácia 74.2% ± 3.8

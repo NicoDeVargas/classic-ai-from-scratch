@@ -1,0 +1,92 @@
+{
+  "execucoes": 10,
+  "parte2": {
+    "formigas": [
+      3,
+      5,
+      10,
+      20,
+      40,
+      80
+    ],
+    "linhas": [
+      {
+        "media": 1345.4,
+        "desvio": 21.245653150180573,
+        "iteracoes": 35.3,
+        "sem_convergir": 0
+      },
+      {
+        "media": 1336.8,
+        "desvio": 9.953223933312596,
+        "iteracoes": 26.5,
+        "sem_convergir": 0
+      },
+      {
+        "media": 1331.7,
+        "desvio": 8.420213774008353,
+        "iteracoes": 22.1,
+        "sem_convergir": 0
+      },
+      {
+        "media": 1329.1,
+        "desvio": 1.7919573407620815,
+        "iteracoes": 28.9,
+        "sem_convergir": 0
+      },
+      {
+        "media": 1329.1,
+        "desvio": 2.4698178070456938,
+        "iteracoes": 27.8,
+        "sem_convergir": 0
+      },
+      {
+        "media": 1328.2,
+        "desvio": 0.42163702135578396,
+        "iteracoes": 14.8,
+        "sem_convergir": 0
+      }
+    ]
+  },
+  "parte3": {
+    "evaporacoes": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "linhas": [
+      {
+        "media": 1330.0,
+        "desvio": 4.944132324730441,
+        "iteracoes": 44.0,
+        "sem_convergir": 0
+      },
+      {
+        "media": 1330.4,
+        "desvio": 3.3399933466334266,
+        "iteracoes": 23.9,
+        "sem_convergir": 0
+      },
+      {
+        "media": 1329.1,
+        "desvio": 1.7919573407620815,
+        "iteracoes": 28.9,
+        "sem_convergir": 0
+      },
+      {
+        "media": 1329.6,
+        "desvio": 2.3664319132398464,
+        "iteracoes": 18.5,
+        "sem_convergir": 0
+      },
+      {
+        "media": 1328.7,
+        "desvio": 0.48304589153964794,
+        "iteracoes": 19.2,
+        "sem_convergir": 0
+      }
+    ]
+  }
+}

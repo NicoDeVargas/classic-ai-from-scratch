@@ -1,0 +1,66 @@
+Parte 1
+média do target: 152.13
+classe 0 (abaixo ou igual à média): 247 amostras
+classe 1 (acima da média): 195 amostras
+divisão  1: acurácia 0.7273
+divisão  2: acurácia 0.7045
+divisão  3: acurácia 0.7386
+divisão  4: acurácia 0.7727
+divisão  5: acurácia 0.7727
+divisão  6: acurácia 0.7500
+divisão  7: acurácia 0.6591
+divisão  8: acurácia 0.7614
+divisão  9: acurácia 0.6705
+divisão 10: acurácia 0.7500
+acurácia média: 0.7307   desvio padrão: 0.0384
+
+matriz de confusão da última divisão (linhas: real, colunas: previsto)
+[[37 14]
+ [ 8 29]]
+
+amostra 0 do teste (índice 125 no dataset), classe real 1
+  age=47, sex=2, bmi=25.6, bp=94, s1=165, s2=74.8, s3=40, s4=4, s5=5.526, s6=93
+a) log da priori: classe 0 = -0.5912   classe 1 = -0.8067
+b) classe 0: log da densidade de cada feature, em ordem decrescente
+     sex    -0.7675
+     s4     -1.1320
+     bmi    -2.2314
+     s5     -3.2679
+     s6     -3.3716
+     bp     -3.4971
+     age    -3.5190
+     s3     -4.0330
+     s1     -4.5794
+     s2     -5.0592
+     log da posteriori (priori + soma) = -32.0493
+b) classe 1: log da densidade de cada feature, em ordem decrescente
+     sex    -0.7514
+     s5     -0.9716
+     s4     -1.2628
+     bmi    -2.6354
+     s6     -3.3670
+     s3     -3.4505
+     age    -3.5187
+     bp     -3.6533
+     s1     -4.9079
+     s2     -5.5381
+     log da posteriori (priori + soma) = -30.8635
+c) probabilidades: classe 0 = 23.40%   classe 1 = 76.60%
+d) classe escolhida: 1
+
+Parte 2: uma feature por vez
+  s5   acurácia média 0.7318   desvio 0.0293
+  bmi  acurácia média 0.7102   desvio 0.0524
+  bp   acurácia média 0.6818   desvio 0.0422
+  s6   acurácia média 0.6591   desvio 0.0440
+  s4   acurácia média 0.6466   desvio 0.0483
+  s3   acurácia média 0.6295   desvio 0.0531
+  s2   acurácia média 0.5784   desvio 0.0372
+  s1   acurácia média 0.5761   desvio 0.0422
+  age  acurácia média 0.5659   desvio 0.0508
+  sex  acurácia média 0.5511   desvio 0.0401
+
+Parte 3: as 3 melhores features (s5, bmi, bp)
+  3 features:  média 0.7307   desvio 0.0550
+  10 features: média 0.7307   desvio 0.0384
+  3 features melhor em 4 divisões, igual em 1, pior em 5

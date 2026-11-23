@@ -1,0 +1,10 @@
+Extra: tempo fixo x controlador fuzzy num cruzamento simulado (7200 s, 100 sementes)
+pico  216 veíc/h | fixo 30 s: sec   19.3 pri  27.0 todos   25.6 | fuzzy: sec   20.8 pri  16.3 todos   17.2 | fuzzy melhor (todos) em 100% | melhor fixo 15 s: todos 11.8
+    defuzzificação: centroide 17.2  bissetor 17.2  mom 15.9
+pico  432 veíc/h | fixo 30 s: sec   20.7 pri  27.0 todos   25.5 | fuzzy: sec   22.4 pri  16.7 todos   18.0 | fuzzy melhor (todos) em 100% | melhor fixo 18 s: todos 15.3
+    defuzzificação: centroide 18.0  bissetor 18.0  mom 16.9
+pico  720 veíc/h | fixo 30 s: sec   41.6 pri  27.0 todos   31.3 | fuzzy: sec   33.5 pri  20.6 todos   24.4 | fuzzy melhor (todos) em 100% | melhor fixo 30 s: todos 31.3
+    defuzzificação: centroide 24.4  bissetor 24.4  mom 23.7
+pico 1008 veíc/h | fixo 30 s: sec  266.7 pri  27.0 todos  108.5 | fuzzy: sec   87.4 pri  71.9 todos   77.3 | fuzzy melhor (todos) em  97% | melhor fixo 36 s: todos 102.0
+    defuzzificação: centroide 77.3  bissetor 76.8  mom 76.3
+vídeo: saida\simulacao_semaforo.mp4

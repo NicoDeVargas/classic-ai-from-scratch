@@ -1,0 +1,242 @@
+{
+  "exemplo": {
+    "fila": 20.0,
+    "espera": 70.0,
+    "graus_fila": {
+      "Baixa": 0.0,
+      "Média": 0.4444444444444444,
+      "Alta": 0.3333333333333333
+    },
+    "graus_espera": {
+      "Curto": 0.0,
+      "Médio": 0.7142857142857143,
+      "Longo": 0.0
+    },
+    "ativacoes": [
+      {
+        "regra": 1,
+        "se_fila": "Baixa",
+        "e_espera": "Curto",
+        "entao": "Reduzir",
+        "forca": 0.0
+      },
+      {
+        "regra": 2,
+        "se_fila": "Baixa",
+        "e_espera": "Médio",
+        "entao": "Reduzir",
+        "forca": 0.0
+      },
+      {
+        "regra": 3,
+        "se_fila": "Baixa",
+        "e_espera": "Longo",
+        "entao": "Manter",
+        "forca": 0.0
+      },
+      {
+        "regra": 4,
+        "se_fila": "Média",
+        "e_espera": "Curto",
+        "entao": "Manter",
+        "forca": 0.0
+      },
+      {
+        "regra": 5,
+        "se_fila": "Média",
+        "e_espera": "Médio",
+        "entao": "Manter",
+        "forca": 0.4444444444444444
+      },
+      {
+        "regra": 6,
+        "se_fila": "Média",
+        "e_espera": "Longo",
+        "entao": "Aumentar",
+        "forca": 0.0
+      },
+      {
+        "regra": 7,
+        "se_fila": "Alta",
+        "e_espera": "Curto",
+        "entao": "Aumentar",
+        "forca": 0.0
+      },
+      {
+        "regra": 8,
+        "se_fila": "Alta",
+        "e_espera": "Médio",
+        "entao": "Aumentar",
+        "forca": 0.3333333333333333
+      },
+      {
+        "regra": 9,
+        "se_fila": "Alta",
+        "e_espera": "Longo",
+        "entao": "Aumentar",
+        "forca": 0.0
+      }
+    ],
+    "saida": 11.691846629450882
+  },
+  "superficie": {
+    "min": -6.298991696322657,
+    "max": 17.762764481442943
+  },
+  "extremos": [
+    {
+      "rotulo": "menor saída",
+      "fila": 0.0,
+      "espera": 0.0,
+      "saida": -6.298991696322657
+    },
+    {
+      "rotulo": "maior saída",
+      "fila": 24.0,
+      "espera": 0.0,
+      "saida": 17.762764481442943
+    }
+  ],
+  "variacoes": [
+    {
+      "titulo": "Original (9 regras, centroide)",
+      "min": -6.298991696322657,
+      "max": 17.762764481442943
+    },
+    {
+      "titulo": "Funções de pertinência diferentes (triângulos uniformes)",
+      "min": -6.298991696322657,
+      "max": 17.762764481442943
+    },
+    {
+      "titulo": "Só 6 regras (o mínimo do enunciado)",
+      "min": -6.298991696322657,
+      "max": 17.762764481442943
+    },
+    {
+      "titulo": "Defuzzificação pela média dos máximos",
+      "min": -8.0,
+      "max": 21.000000000000004
+    }
+  ],
+  "degrau": {
+    "espera": 75.0,
+    "antes": {
+      "fila": 6.0,
+      "saida": -4.154498609193332
+    },
+    "depois": {
+      "fila": 8.0,
+      "saida": 5.699700954997243
+    },
+    "forca_aumentar": 0.2
+  },
+  "buracos_6_regras_pct": 11.611228741206201,
+  "buracos_9_regras_pct": 0.0,
+  "termos": {
+    "fila": {
+      "Baixa": [
+        0,
+        0,
+        6,
+        12
+      ],
+      "Média": [
+        6,
+        15,
+        24
+      ],
+      "Alta": [
+        18,
+        24,
+        30,
+        30
+      ]
+    },
+    "espera": {
+      "Curto": [
+        0,
+        0,
+        25,
+        50
+      ],
+      "Médio": [
+        25,
+        60,
+        95
+      ],
+      "Longo": [
+        70,
+        95,
+        120,
+        120
+      ]
+    },
+    "ajuste": {
+      "Reduzir": [
+        -10,
+        -10,
+        -6,
+        0
+      ],
+      "Manter": [
+        -6,
+        0,
+        6
+      ],
+      "Aumentar": [
+        0,
+        12,
+        30,
+        30
+      ]
+    }
+  },
+  "regras": [
+    [
+      "Baixa",
+      "Curto",
+      "Reduzir"
+    ],
+    [
+      "Baixa",
+      "Médio",
+      "Reduzir"
+    ],
+    [
+      "Baixa",
+      "Longo",
+      "Manter"
+    ],
+    [
+      "Média",
+      "Curto",
+      "Manter"
+    ],
+    [
+      "Média",
+      "Médio",
+      "Manter"
+    ],
+    [
+      "Média",
+      "Longo",
+      "Aumentar"
+    ],
+    [
+      "Alta",
+      "Curto",
+      "Aumentar"
+    ],
+    [
+      "Alta",
+      "Médio",
+      "Aumentar"
+    ],
+    [
+      "Alta",
+      "Longo",
+      "Aumentar"
+    ]
+  ]
+}

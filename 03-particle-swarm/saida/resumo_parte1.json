@@ -1,0 +1,23 @@
+{
+  "semente": 2,
+  "c1": 2.0,
+  "c2": 2.0,
+  "particulas": 15,
+  "iteracoes": 100,
+  "w_max": 0.9,
+  "w_min": 0.4,
+  "fracao_vmax": 0.2,
+  "vmax": 2.048,
+  "limite": 5.12,
+  "tolerancia": 0.01,
+  "f_gbest": 6.769948512896917e-08,
+  "gbest": [
+    5.721890820924884e-06,
+    -1.7564191027320352e-05
+  ],
+  "convergiu": true,
+  "iteracao_tolerancia": 58,
+  "raio_final": 0.4827491325442552,
+  "raio_inicial": 10.615478495375074,
+  "f_inicial": 17.038651801680142
+}

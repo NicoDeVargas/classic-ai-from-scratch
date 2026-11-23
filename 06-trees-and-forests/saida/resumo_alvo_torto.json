@@ -1,0 +1,50 @@
+{
+  "ruido": 53.476128764026576,
+  "linhas": [
+    {
+      "mistura": 0.0,
+      "linear": 42.460306238508295,
+      "linear_dp": 3.3356577599543997,
+      "floresta": 44.50132646930225,
+      "floresta_dp": 3.618614386724305,
+      "floresta_ganha": 0,
+      "divisoes": 10
+    },
+    {
+      "mistura": 0.25,
+      "linear": 43.21908091652616,
+      "linear_dp": 2.954592972377454,
+      "floresta": 44.56249432229221,
+      "floresta_dp": 3.19067550070666,
+      "floresta_ganha": 3,
+      "divisoes": 10
+    },
+    {
+      "mistura": 0.5,
+      "linear": 45.23270819263228,
+      "linear_dp": 2.758082131628576,
+      "floresta": 45.32294997004627,
+      "floresta_dp": 3.0916090630152455,
+      "floresta_ganha": 5,
+      "divisoes": 10
+    },
+    {
+      "mistura": 0.75,
+      "linear": 48.271599073623484,
+      "linear_dp": 3.1370018427661583,
+      "floresta": 46.389310063749434,
+      "floresta_dp": 3.333085885600192,
+      "floresta_ganha": 8,
+      "divisoes": 10
+    },
+    {
+      "mistura": 1.0,
+      "linear": 52.2891903056507,
+      "linear_dp": 3.5240964755501376,
+      "floresta": 47.45261829196178,
+      "floresta_dp": 3.6749818801863223,
+      "floresta_ganha": 9,
+      "divisoes": 10
+    }
+  ]
+}

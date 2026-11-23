@@ -1,0 +1,2 @@
+previsões iguais às do scikit-learn: 880 de 880
+maior diferença nas probabilidades: 3.7e-15

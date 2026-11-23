@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Floresta ao vivo</title>
+<style>
+  :root {
+    --navy: #152c43; --teal: #75bfb4; --teal-forte: #3f9e92; --teal-claro: #dff1ee;
+    --texto: #152c43; --apagado: #66788a; --linha: #dbe2e8; --fraco: #f3f6f8;
+  }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body { margin: 0 auto; max-width: 1560px; color: var(--texto); font-family: "Segoe UI Variable Display", "Segoe UI", Tahoma, sans-serif; font-size: 15px; line-height: 1.4; }
+  header { display: flex; align-items: center; gap: 28px; padding: 10px 44px; border-bottom: 1px solid var(--linha); }
+  header img { height: 62px; display: block; }
+  header .sigla { font-size: 26px; font-weight: 700; letter-spacing: -.3px; }
+  header h1 { margin: 0; font-size: 21px; font-weight: 600; letter-spacing: -.2px; }
+  header p { margin: 1px 0 0; color: var(--apagado); font-size: 14px; }
+  header .acoes { margin-left: auto; display: flex; align-items: center; gap: 22px; }
+  button { font: inherit; cursor: pointer; border-radius: 4px; }
+  #sortear { background: var(--navy); color: #fff; border: 0; padding: 11px 18px; font-weight: 600; }
+  #sortear:hover { background: #21405f; }
+  #sortear:active, #medio:active { transform: translateY(1px); }
+  #medio { background: none; border: 0; padding: 0; color: var(--navy); text-decoration: underline; text-decoration-color: var(--teal); text-decoration-thickness: 2px; text-underline-offset: 5px; }
+  button:focus-visible, input:focus-visible { outline: 2px solid var(--teal-forte); outline-offset: 3px; }
+  main { display: grid; grid-template-columns: 292px minmax(0, 1fr); gap: 60px; padding: 22px 44px 4px; }
+  h2 { margin: 0 0 14px; font-size: 16px; font-weight: 600; letter-spacing: -.1px; }
+  h2 span { font-weight: 400; color: var(--apagado); margin-left: 10px; }
+  .medida { padding: 8px 0 9px; border-top: 1px solid var(--linha); }
+  .medida:last-of-type { border-bottom: 1px solid var(--linha); }
+  .medida .topo { display: flex; align-items: baseline; gap: 8px; }
+  .medida .nome { font-weight: 600; width: 34px; }
+  .medida .oque { color: var(--apagado); font-size: 13.5px; flex: 1; }
+  .medida .valor { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .medida.ativa .nome, .medida.ativa .valor { color: var(--teal-forte); }
+  input[type=range] { -webkit-appearance: none; appearance: none; display: block; width: 100%; height: 18px; margin: 3px 0 0; background: transparent; cursor: pointer; }
+  input[type=range]::-webkit-slider-runnable-track { height: 2px; background: linear-gradient(to right, var(--navy) var(--p, 50%), var(--linha) var(--p, 50%)); }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 14px; height: 14px; margin-top: -6px; border-radius: 50%; background: var(--navy); border: 3px solid #fff; box-shadow: 0 0 0 1px var(--navy); }
+  .medida.ativa input[type=range]::-webkit-slider-thumb { background: var(--teal-forte); box-shadow: 0 0 0 1px var(--teal-forte); }
+  input[type=range]::-moz-range-track { height: 2px; background: var(--linha); }
+  input[type=range]::-moz-range-progress { height: 2px; background: var(--navy); }
+  input[type=range]::-moz-range-thumb { width: 9px; height: 9px; border-radius: 50%; background: var(--navy); border: 3px solid #fff; box-shadow: 0 0 0 1px var(--navy); }
+  #real { display: none; margin-top: 16px; padding-left: 14px; border-left: 3px solid var(--teal); color: var(--apagado); }
+  #real b { display: block; color: var(--texto); font-size: 30px; font-weight: 600; line-height: 1.15; font-variant-numeric: tabular-nums; }
+  .previsao { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 36px; align-items: end; padding-bottom: 14px; border-bottom: 1px solid var(--linha); }
+  .previsao .rotulo { font-size: 16px; color: var(--apagado); }
+  .previsao .numero { font-size: 104px; font-weight: 600; line-height: .95; letter-spacing: -4px; font-variant-numeric: tabular-nums; margin: 2px 0 6px -4px; }
+  .previsao .nota { color: var(--apagado); font-size: 14px; min-height: 20px; }
+  .bloco { padding: 16px 0 4px; border-bottom: 1px solid var(--linha); }
+  .par { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; padding: 16px 0 0; }
+  svg { width: 100%; height: auto; display: block; overflow: visible; }
+  svg text { font-family: "Segoe UI Variable Display", "Segoe UI", Tahoma, sans-serif; }
+  footer { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; padding: 14px 44px 22px; color: var(--apagado); font-size: 12.5px; }
+  @media (max-width: 1050px) { main, .previsao, .par { grid-template-columns: 1fr; gap: 26px; } }
+</style>
+</head>
+<body>
+<header>
+  /*LOGO*/
+  <div>
+    <h1>Floresta ao vivo</h1>
+    <p>Mude as medidas de um paciente e veja o que uma árvore e uma floresta de 100 árvores preveem.</p>
+  </div>
+  <div class="acoes">
+    <button id="medio">Voltar ao paciente médio</button>
+    <button id="sortear">Sortear um paciente do teste</button>
+  </div>
+</header>
+<main>
+  <aside>
+    <h2>Paciente</h2>
+    <div id="medidas"></div>
+    <div id="real"></div>
+  </aside>
+  <div>
+    <section class="previsao">
+      <div>
+        <div class="rotulo">A floresta prevê</div>
+        <div class="numero" id="vm"></div>
+        <div class="nota" id="nm"></div>
+      </div>
+      <svg id="regua" viewBox="0 0 760 170" role="img" aria-label="As três previsões numa mesma escala"></svg>
+    </section>
+    <section class="bloco">
+      <h2>O caminho na árvore de 3 perguntas <span>para a esquerda quando a resposta é sim</span></h2>
+      <svg id="arvore" viewBox="0 0 1000 262"></svg>
+    </section>
+    <section class="par">
+      <div>
+        <h2>Como as 100 árvores votaram</h2>
+        <svg id="votos" viewBox="0 0 500 226"></svg>
+      </div>
+      <div>
+        <h2 id="titulo-curva"></h2>
+        <svg id="curva" viewBox="0 0 500 226"></svg>
+      </div>
+    </section>
+  </div>
+</main>
+<footer>
+  <span>Inteligência Artificial, trabalho prático de árvore de decisão. Modelos treinados no dataset Diabetes.</span>
+  <span>David Lanza Melo Matos, Lucca Molinari Barbosa e Nicolas Rodrigues de Vargas</span>
+</footer>
+<script>
+const D = /*DADOS*/;
+const NS = "http://www.w3.org/2000/svg";
+const NAVY = "#152c43", TEAL = "#75bfb4", TEAL_FORTE = "#3f9e92", TEAL_CLARO = "#dff1ee", APAGADO = "#66788a", LINHA = "#dbe2e8", CINZA = "#a9b6c2";
+const DE = 25, ATE = 350;
+const $ = (id) => document.getElementById(id);
+const num = (x, casas = 0) => x.toFixed(casas).replace(".", ",");
+const paciente = D.medio.slice();
+let ativa = D.nomes.indexOf("bmi");
+let real = null;
+
+function preve(arvore, x) {
+  let n = 0;
+  while (arvore.f[n] >= 0) n = x[arvore.f[n]] <= arvore.t[n] ? arvore.l[n] : arvore.r[n];
+  return arvore.v[n];
+}
+function caminho(arvore, x) {
+  const nos = [0];
+  let n = 0;
+  while (arvore.f[n] >= 0) { n = x[arvore.f[n]] <= arvore.t[n] ? arvore.l[n] : arvore.r[n]; nos.push(n); }
+  return nos;
+}
+const votosDe = (x) => D.floresta.map((a) => preve(a, x));
+const media = (v) => v.reduce((a, b) => a + b, 0) / v.length;
+
+function el(pai, nome, atributos, texto) {
+  const e = document.createElementNS(NS, nome);
+  for (const k in atributos) e.setAttribute(k, atributos[k]);
+  if (texto !== undefined) e.textContent = texto;
+  pai.appendChild(e);
+  return e;
+}
+
+function montaMedidas() {
+  D.nomes.forEach((nome, i) => {
+    const div = document.createElement("div");
+    div.className = "medida";
+    div.id = "m" + i;
+    div.innerHTML = '<label class="topo" for="r' + i + '"><span class="nome">' + nome + '</span><span class="oque">' + D.descricao[i] +
+      '</span><span class="valor" id="val' + i + '"></span></label>' +
+      '<input type="range" id="r' + i + '" min="' + D.min[i] + '" max="' + D.max[i] + '" step="' + D.passo[i] + '">';
+    $("medidas").appendChild(div);
+    $("r" + i).addEventListener("input", (ev) => {
+      paciente[i] = parseFloat(ev.target.value);
+      ativa = i;
+      real = null;
+      atualiza();
+    });
+  });
+}
+
+function eixo(svg, x0, x1, y, de, ate, casas, passos) {
+  el(svg, "line", { x1: x0, y1: y, x2: x1, y2: y, stroke: NAVY, "stroke-width": 1 });
+  for (let i = 0; i <= passos; i++) {
+    const valor = de + (ate - de) * i / passos, x = x0 + (x1 - x0) * i / passos;
+    el(svg, "line", { x1: x, y1: y, x2: x, y2: y + 5, stroke: NAVY });
+    el(svg, "text", { x, y: y + 20, "text-anchor": "middle", "font-size": 12.5, fill: APAGADO }, num(valor, casas));
+  }
+}
+
+function desenhaRegua(m, p3, funda) {
+  const svg = $("regua");
+  svg.innerHTML = "";
+  const x0 = 8, x1 = 752, y = 118;
+  const X = (valor) => x0 + (Math.max(DE, Math.min(ATE, valor)) - DE) / (ATE - DE) * (x1 - x0);
+  eixo(svg, x0, x1, y, DE, ATE, 0, 13);
+  const marcas = [
+    { valor: p3, nome: "árvore de 3 perguntas", cor: CINZA, tipo: 0 },
+    { valor: funda, nome: "árvore sem limite", cor: NAVY, tipo: 1 },
+    { valor: m, nome: "floresta", cor: TEAL_FORTE, tipo: 2 },
+  ];
+  const fim = X((p3 + funda + m) / 3) > 480;
+  marcas.sort((a, b) => fim ? b.valor - a.valor : a.valor - b.valor);
+  marcas.forEach((k, i) => {
+    const x = X(k.valor), altura = 22 + i * 28;
+    el(svg, "line", { x1: x, y1: y, x2: x, y2: altura - 12, stroke: k.cor, "stroke-width": k.tipo === 2 ? 2.5 : 1.5 });
+    el(svg, "circle", { cx: x, cy: y, r: k.tipo === 2 ? 7 : 5, fill: k.tipo === 1 ? "#fff" : k.cor, stroke: k.cor, "stroke-width": 2 });
+    const t = el(svg, "text", { x: x + (fim ? -8 : 8), y: altura, "text-anchor": fim ? "end" : "start", "font-size": 14, fill: k.tipo === 2 ? TEAL_FORTE : NAVY });
+    el(t, "tspan", { "font-weight": 700 }, num(k.valor));
+    el(t, "tspan", { dx: 7, fill: k.tipo === 2 ? TEAL_FORTE : APAGADO }, k.nome);
+  });
+  if (real !== null) {
+    const x = X(real.valor), fim = x > 600;
+    el(svg, "path", { d: "M" + x + " " + (y + 26) + " l-7 12 h14 z", fill: NAVY });
+    el(svg, "text", { x: x + (fim ? -13 : 13), y: y + 38, "text-anchor": fim ? "end" : "start", "font-size": 14, "font-weight": 700, fill: NAVY }, "valor real " + num(real.valor));
+  }
+}
+
+function posicoes(arvore) {
+  const pos = {};
+  let folha = 0;
+  const nivel = { 0: 0 };
+  (function anda(n) {
+    if (arvore.f[n] < 0) { pos[n] = [folha++, nivel[n]]; return; }
+    nivel[arvore.l[n]] = nivel[arvore.r[n]] = nivel[n] + 1;
+    anda(arvore.l[n]); anda(arvore.r[n]);
+    pos[n] = [(pos[arvore.l[n]][0] + pos[arvore.r[n]][0]) / 2, nivel[n]];
+  })(0);
+  return { pos, folhas: folha };
+}
+
+function desenhaArvore() {
+  const svg = $("arvore"), a = D.arvore3;
+  svg.innerHTML = "";
+  const { pos, folhas } = posicoes(a);
+  const X = (n) => 56 + pos[n][0] * (888 / (folhas - 1)), Y = (n) => 22 + pos[n][1] * 72;
+  const naTrilha = new Set(caminho(a, paciente));
+  const ordem = Object.keys(pos).map(Number);
+  for (const aceso of [false, true]) {
+    for (const n of ordem) {
+      if (a.f[n] < 0) continue;
+      for (const filho of [a.l[n], a.r[n]]) {
+        if ((naTrilha.has(n) && naTrilha.has(filho)) !== aceso) continue;
+        el(svg, "line", { x1: X(n), y1: Y(n), x2: X(filho), y2: Y(filho), stroke: aceso ? TEAL : LINHA, "stroke-width": aceso ? 7 : 1.5, "stroke-linecap": "round" });
+      }
+    }
+  }
+  for (const n of ordem) {
+    const folha = a.f[n] < 0, aceso = naTrilha.has(n);
+    const rotulo = folha ? num(a.v[n]) : D.nomes[a.f[n]] + " ≤ " + num(a.t[n], Math.max(1, D.casas[a.f[n]]));
+    const w = folha ? 62 : 132;
+    el(svg, "rect", { x: X(n) - w / 2, y: Y(n) - 17, width: w, height: 34, rx: 4,
+      fill: aceso ? (folha ? TEAL : NAVY) : "#fff", stroke: aceso ? (folha ? TEAL : NAVY) : CINZA, "stroke-width": 1 });
+    el(svg, "text", { x: X(n), y: Y(n) + 5.5, "text-anchor": "middle", "font-size": 16, "font-weight": aceso ? 700 : 400,
+      fill: aceso ? (folha ? NAVY : "#fff") : (folha ? APAGADO : NAVY) }, rotulo);
+  }
+}
+
+function desenhaVotos(votos, m, funda) {
+  const svg = $("votos");
+  svg.innerHTML = "";
+  const n = 26, x0 = 8, x1 = 492, y0 = 184, alt = 150;
+  const caixas = new Array(n).fill(0);
+  votos.forEach((voto) => caixas[Math.max(0, Math.min(n - 1, Math.floor((voto - DE) / (ATE - DE) * n)))]++);
+  const teto = Math.max(12, ...caixas);
+  const X = (valor) => x0 + (Math.max(DE, Math.min(ATE, valor)) - DE) / (ATE - DE) * (x1 - x0);
+  caixas.forEach((c, i) => {
+    if (c) el(svg, "rect", { x: x0 + i * (x1 - x0) / n + 1, y: y0 - c / teto * alt, width: (x1 - x0) / n - 2, height: c / teto * alt, fill: TEAL });
+  });
+  eixo(svg, x0, x1, y0, DE, ATE, 0, 5);
+  el(svg, "line", { x1: X(m), y1: y0, x2: X(m), y2: 12, stroke: NAVY, "stroke-width": 2 });
+  const fim = m > 240;
+  el(svg, "text", { x: X(m) + (fim ? -8 : 8), y: 22, "text-anchor": fim ? "end" : "start", "font-size": 14, "font-weight": 700, fill: NAVY }, "média " + num(m));
+  el(svg, "text", { x: x0, y: 222, "font-size": 13, fill: APAGADO }, "Cada barra conta quantas árvores previram um valor naquela faixa.");
+}
+
+function desenhaCurva() {
+  const svg = $("curva"), i = ativa;
+  svg.innerHTML = "";
+  $("titulo-curva").innerHTML = "Mudando só o " + D.nomes[i] + " <span>" + D.descricao[i] + "</span>";
+  const x0 = 34, x1 = 492, y0 = 184, y1 = 10, pontos = 150;
+  const X = (valor) => x0 + (valor - D.min[i]) / (D.max[i] - D.min[i]) * (x1 - x0);
+  const Y = (valor) => y0 - (Math.max(DE, Math.min(ATE, valor)) - DE) / (ATE - DE) * (y0 - y1);
+  for (let g = 50; g <= 350; g += 100) {
+    el(svg, "line", { x1: x0, y1: Y(g), x2: x1, y2: Y(g), stroke: LINHA });
+    el(svg, "text", { x: x0 - 7, y: Y(g) + 4, "text-anchor": "end", "font-size": 12.5, fill: APAGADO }, g);
+  }
+  const copia = paciente.slice();
+  const series = [[], [], []];
+  for (let k = 0; k <= pontos; k++) {
+    const valor = D.min[i] + (D.max[i] - D.min[i]) * k / pontos;
+    copia[i] = D.nomes[i] === "sex" ? (valor < 1.5 ? 1 : 2) : valor;
+    series[0].push(X(valor) + "," + Y(preve(D.arvore3, copia)));
+    series[1].push(X(valor) + "," + Y(preve(D.funda, copia)));
+    series[2].push(X(valor) + "," + Y(media(votosDe(copia))));
+  }
+  [[CINZA, 1.5], [NAVY, 1.4], [TEAL, 5]].forEach((estilo, k) =>
+    el(svg, "polyline", { points: series[k].join(" "), fill: "none", stroke: estilo[0], "stroke-width": estilo[1], "stroke-linejoin": "round", "stroke-linecap": "round" }));
+  const x = X(paciente[i]);
+  el(svg, "line", { x1: x, y1: y0, x2: x, y2: y1, stroke: NAVY, "stroke-dasharray": "3 4" });
+  el(svg, "circle", { cx: x, cy: Y(media(votosDe(paciente))), r: 6, fill: TEAL_FORTE, stroke: "#fff", "stroke-width": 2 });
+  eixo(svg, x0, x1, y0, D.min[i], D.max[i], D.casas[i], 4);
+  [[TEAL, 5, "floresta", 34], [NAVY, 1.4, "árvore sem limite", 128], [CINZA, 1.5, "árvore de 3 perguntas", 282]].forEach((l) => {
+    el(svg, "line", { x1: l[3], y1: 218, x2: l[3] + 22, y2: 218, stroke: l[0], "stroke-width": l[1], "stroke-linecap": "round" });
+    el(svg, "text", { x: l[3] + 29, y: 222, "font-size": 13, fill: APAGADO }, l[2]);
+  });
+}
+
+function atualiza() {
+  D.nomes.forEach((nome, i) => {
+    const r = $("r" + i);
+    r.value = paciente[i];
+    r.style.setProperty("--p", ((paciente[i] - D.min[i]) / (D.max[i] - D.min[i]) * 100) + "%");
+    $("val" + i).textContent = nome === "sex" ? (paciente[i] < 1.5 ? "1" : "2") : num(paciente[i], D.casas[i]);
+    $("m" + i).className = "medida" + (i === ativa ? " ativa" : "");
+  });
+  const votos = votosDe(paciente), m = media(votos), p3 = preve(D.arvore3, paciente), funda = preve(D.funda, paciente);
+  $("vm").textContent = num(m);
+  const erro = (valor) => num(Math.abs(valor - real.valor));
+  $("nm").textContent = real === null
+    ? "É a média de 100 árvores, que votaram de " + num(Math.min(...votos)) + " a " + num(Math.max(...votos)) + "."
+    : "Errou por " + erro(m) + ". A árvore sem limite errou por " + erro(funda) + ", e a de 3 perguntas, por " + erro(p3) + ".";
+  $("real").style.display = real === null ? "none" : "block";
+  if (real !== null) $("real").innerHTML = "Paciente nº " + real.indice + " do conjunto de teste. Valor real:<b>" + num(real.valor) + "</b>";
+  desenhaRegua(m, p3, funda);
+  desenhaArvore();
+  desenhaVotos(votos, m, funda);
+  desenhaCurva();
+}
+
+$("sortear").addEventListener("click", () => {
+  const p = D.teste[Math.floor(Math.random() * D.teste.length)];
+  p.x.forEach((valor, i) => paciente[i] = valor);
+  real = { indice: p.indice, valor: p.y };
+  atualiza();
+});
+$("medio").addEventListener("click", () => {
+  D.medio.forEach((valor, i) => paciente[i] = valor);
+  real = null;
+  atualiza();
+});
+
+montaMedidas();
+atualiza();
+window.conferencia = () => D.teste.slice(0, 20).map((p) =>
+  [preve(D.arvore3, p.x) - p.p3, preve(D.funda, p.x) - p.pf, media(votosDe(p.x)) - p.pm]);
+</script>
+</body>
+</html>

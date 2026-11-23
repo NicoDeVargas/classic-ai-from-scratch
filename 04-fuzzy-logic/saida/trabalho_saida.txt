@@ -1,0 +1,19 @@
+Controlador fuzzy do tempo de verde (Mamdani: E = mínimo, agregação = máximo, centroide)
+
+Exemplo: QueueSec = 20 veículos, WaitTimeSec = 70 s
+  fila:   Baixa 0.00  Média 0.44  Alta 0.33
+  espera: Curto 0.00  Médio 0.71  Longo 0.00
+  regra 5: SE fila é Média E espera é Médio ENTÃO Manter  -> força 0.44
+  regra 8: SE fila é Alta E espera é Médio ENTÃO Aumentar  -> força 0.33
+  GreenAdj = 11.69 s
+
+Superfície: de -6.30 s a 17.76 s (o universo vai de -10 a +30 s)
+  menor saída em QueueSec = 0, WaitTimeSec = 0: -6.30 s
+  maior saída em QueueSec = 24, WaitTimeSec = 0: 17.76 s
+
+Variações:
+  Original (9 regras, centroide)                          de  -6.30 a  17.76
+  Funções de pertinência diferentes (triângulos uniformes) de  -6.30 a  17.76
+  Só 6 regras (o mínimo do enunciado)                     de  -6.30 a  17.76
+  Defuzzificação pela média dos máximos                   de  -8.00 a  21.00
+Pontos do domínio sem nenhuma regra ativa: 11.6% com 6 regras, 0.0% com 9

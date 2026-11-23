@@ -1,0 +1,51 @@
+Como a raiz é escolhida (última divisão): variância inicial 5941
+  s5   melhor corte em    4.640   redução da variância  1748.5
+  bmi  melhor corte em   26.850   redução da variância  1671.7
+  s4   melhor corte em    3.690   redução da variância  1101.8
+  bp   melhor corte em  101.500   redução da variância  1034.6
+  s3   melhor corte em   45.500   redução da variância   937.7
+  s6   melhor corte em   99.500   redução da variância   720.1
+  s1   melhor corte em  193.500   redução da variância   391.4
+  s2   melhor corte em  121.600   redução da variância   294.8
+  age  melhor corte em   42.500   redução da variância   270.6
+  sex  melhor corte em    1.500   redução da variância    10.9
+
+Extra: os pacientes fora da sacola
+  divisão  1: estimativa 46.23   teste 47.79
+  divisão  2: estimativa 46.42   teste 49.14
+  divisão  3: estimativa 46.66   teste 51.59
+  divisão  4: estimativa 47.81   teste 45.38
+  divisão  5: estimativa 49.52   teste 41.70
+  divisão  6: estimativa 48.68   teste 44.93
+  divisão  7: estimativa 45.73   teste 50.43
+  divisão  8: estimativa 47.92   teste 44.25
+  divisão  9: estimativa 46.91   teste 46.78
+  divisão 10: estimativa 47.53   teste 46.71
+  média: estimativa 47.34   teste 46.87   fração de pacientes fora de cada árvore 0.367
+
+Extra: quantas features sortear em cada nó (30 divisões)
+   1 features: MAE 48.54
+   3 features: MAE 46.95
+   5 features: MAE 46.89
+  10 features: MAE 47.05
+
+Extra: comparação de modelos (30 divisões)
+  prever sempre a média                          MAE 67.32
+  uma árvore sem limite                          MAE 63.35
+  uma árvore de profundidade 3                   MAE 50.48
+  bagging (100 árvores, todas as features)       MAE 47.05
+  floresta aleatória (100 árvores, 3 features)   MAE 46.95
+  boosting (100 árvores de profundidade 2)       MAE 46.15
+  regressão linear                               MAE 44.67
+
+Extra: importância das features na floresta
+  s5   23.0%
+  bmi  22.7%
+  bp   11.6%
+  s3   7.8%
+  s4   7.7%
+  s6   7.7%
+  s2   6.4%
+  s1   6.1%
+  age  5.7%
+  sex  1.4%
